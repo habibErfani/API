@@ -1,0 +1,14 @@
+<doctrine-mapping xmlns="https://doctrine-project.org/schemas/orm/doctrine-mapping"
+                  xmlns:xsi="https://www.w3.org/2001/XMLSchema-instance"
+                  xsi:schemaLocation="https://doctrine-project.org/schemas/orm/doctrine-mapping
+                          https://www.doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+
+    <entity name="App\Domain\Entity\Library" table="Books">
+        <id name="id" type="guid"/>
+        <field name="name" type="string"/>
+        <field name="chosen" type="array"/>
+        <field name="description" type="string"/>
+        <field name="started" type="datetime"/>
+        <field name="ended" type="datetime"/>
+    </entity>
+</doctrine-mapping>

@@ -1,0 +1,42 @@
+{
+    "name": "habiberfani/untitled",
+    "autoload": {
+        "psr-4": {
+            "App\\": "src/",
+            "Migrations\\": "tests/"
+        }
+    },
+    "authors": [
+        {
+            "name": "habib erfani",
+            "email": "hbberfani@gmail.com"
+        }
+    ],
+    "require": {
+        "php": "^8.1",
+        "ramsey/uuid": "^4.7",
+        "doctrine/dbal": "^3.6",
+        "doctrine/orm": "3.0.x-dev",
+        "symfony/cache": "^6.2",
+        "doctrine/migrations": "^3.6",
+        "league/fractal": "^0.20.1",
+        "kdubuc/php-cs-fixer-rules": "^1.2",
+        "pagerfanta/pagerfanta": "^4.1",
+        "laminas/laminas-servicemanager": "^3.20",
+        "guzzlehttp/guzzle": "^7.5",
+        "guzzlehttp/psr7": "^2.5",
+        "laminas/laminas-di": "^3.12",
+        "spatie/fractalistic": "^2.9",
+        "league/route": "^5.1",
+        "psr/http-server-handler": "^1.0",
+        "middlewares/payload": "^3.0",
+        "symfony/http-client": "^6.2",
+        "http-interop/response-sender": "^1.0",
+        "vlucas/phpdotenv": "^5.5",
+        "fig/http-message-util": "^1.1"
+
+    },
+    "scripts": {
+        "fix-cs": "php vendor/bin/php-cs-fixer fix --config=vendor/kdubuc/php-cs-fixer-rules/php-cs-fixer.php"
+    }
+}

@@ -4,7 +4,6 @@ namespace App;
 
 use Laminas;
 use GuzzleHttp;
-use Laminas\ServiceManager\ServiceManager;
 use League\Fractal\Manager;
 use Doctrine\DBAL\Connection;
 use App\Service\LibraryService;
@@ -17,6 +16,7 @@ use App\Repository\LibraryRepository;
 use Psr\Container\ContainerInterface;
 use Laminas\Di\Container\ConfigFactory;
 use Psr\Http\Message\UriFactoryInterface;
+use Laminas\ServiceManager\ServiceManager;
 use Psr\Http\Message\StreamFactoryInterface;
 use Psr\Http\Message\RequestFactoryInterface;
 use Psr\Http\Message\ResponseFactoryInterface;

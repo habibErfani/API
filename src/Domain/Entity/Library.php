@@ -25,6 +25,7 @@ class Library
         $this->description = $description;
         $this->started     = $started;
         $this->ended       = $ended;
+        \assert($started < $ended, 'Started must be higher than ended');
     }
 
     public function getId() : string

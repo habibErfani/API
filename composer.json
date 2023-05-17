@@ -1,5 +1,5 @@
 {
-    "name": "habiberfani/untitled",
+    "name": "habiberfani/api",
     "autoload": {
         "psr-4": {
             "App\\": "src/",

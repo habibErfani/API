@@ -21,8 +21,6 @@ class GetAllBooksController extends AbstractController
 
     public function __invoke(ServerRequestInterface $request, array $args = []) : ResponseInterface
     {
-
-
         $paginator = $this->service->getBooks();
 
         $data = $this->fractal

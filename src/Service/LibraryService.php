@@ -5,7 +5,7 @@ namespace App\Service;
 use Pagerfanta\Pagerfanta;
 use App\Domain\Entity\Library;
 
-class LibraryService
+final class LibraryService
 {
     public function __construct(private \App\Domain\Repository\LibraryRepositoryInterface $repository,
     ) {
@@ -26,10 +26,8 @@ class LibraryService
         return new Pagerfanta($this->repository->getAllBooks());
     }
 
-    public function getBookById(string $id) : Pagerfanta
+    public function getBookById(string $id) : ?Library
     {
-        $book = $this->repository->getBookById($id);
-
-        return new Pagerfanta($book);
+        return $this->repository->getBookById($id);
     }
 }

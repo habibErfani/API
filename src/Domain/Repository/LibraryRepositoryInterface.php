@@ -11,7 +11,7 @@ interface LibraryRepositoryInterface
 
     public function insertBook(Library $library) : void;
 
-    public function deleteBook(string $id);
+    public function deleteBook(string $id) : void;
 
     public function getBookById(string $id) : ?Library;
 }

@@ -2,9 +2,9 @@
 
 namespace App\Test\Domain\Entity;
 
-use App\Domain\Entity\Library;
 use Faker\Factory;
 use Faker\Generator;
+use App\Domain\Entity\Library;
 use PHPUnit\Framework\TestCase;
 
 class LibraryTest extends TestCase
@@ -44,7 +44,7 @@ class LibraryTest extends TestCase
         self::assertNotSame($name, $this->library->getName());
     }
 
-    public function testTook(): void
+    public function testTook() : void
     {
         $book = $this->generator->name;
         $this->library->took($book);
@@ -54,7 +54,7 @@ class LibraryTest extends TestCase
         self::assertSame($book, $this->library->getChosen()[0]);
     }
 
-    public function testDescriptions(): void
+    public function testDescriptions() : void
     {
         $this->library->setDescription('Best Book');
 

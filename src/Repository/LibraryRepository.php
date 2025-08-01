@@ -7,7 +7,7 @@ use Doctrine\ORM\EntityManager;
 use Pagerfanta\Adapter\AdapterInterface;
 use Pagerfanta\Doctrine\ORM\QueryAdapter;
 
-class LibraryRepository implements \App\Domain\Repository\LibraryRepositoryInterface
+final class LibraryRepository implements \App\Domain\Repository\LibraryRepositoryInterface
 {
     public function __construct(private EntityManager $entityManager)
     {
@@ -27,7 +27,7 @@ class LibraryRepository implements \App\Domain\Repository\LibraryRepositoryInter
         $this->entityManager->flush();
     }
 
-    public function deleteBook(string $id)
+    public function deleteBook(string $id) : void
     {
         $book = $this->getBookById($id);
 

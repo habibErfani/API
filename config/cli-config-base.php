@@ -25,9 +25,9 @@ assert(
 );
 
 $result = [
-    'default'        => DependencyFactory::fromEntityManager($config, new ExistingEntityManager($entityManager)),
-    'em_evenement'   => DependencyFactory::fromEntityManager($config, new ExistingEntityManager($entityManager_even)),
-    'em_notification'=> DependencyFactory::fromEntityManager($config, new ExistingEntityManager($entityManager_notif)),
+    'default' => DependencyFactory::fromEntityManager($config, new ExistingEntityManager($entityManager)),
+    'em_evenement' => DependencyFactory::fromEntityManager($config, new ExistingEntityManager($entityManager_even)),
+    'em_notification' => DependencyFactory::fromEntityManager($config, new ExistingEntityManager($entityManager_notif)),
 ];
 
 return $result;

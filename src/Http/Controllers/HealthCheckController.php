@@ -6,10 +6,10 @@ use Psr\Http\Message\ResponseInterface;
 use Psr\Http\Message\ServerRequestInterface;
 use Psr\Http\Message\ResponseFactoryInterface;
 
-class HealthCheckController
+final class HealthCheckController
 {
     public function __construct(
-        private ResponseFactoryInterface $response_factory
+        private ResponseFactoryInterface $response_factory,
     ) {
     }
 

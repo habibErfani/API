@@ -16,10 +16,10 @@ use Psr\Container\ContainerExceptionInterface;
 use App\Http\Controllers\GetAllBooksController;
 use App\Http\Controllers\HealthCheckController;
 
-class HttpPipeline implements RequestHandlerInterface
+final class HttpPipeline implements RequestHandlerInterface
 {
     public function __construct(
-        private ContainerInterface $container
+        private ContainerInterface $container,
     ) {
     }
 

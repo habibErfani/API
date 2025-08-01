@@ -10,12 +10,12 @@ use Psr\Http\Message\ResponseFactoryInterface;
 use Spatie\Fractalistic\Fractal as Fractalistic;
 use League\Fractal\Pagination\PagerfantaPaginatorAdapter;
 
-class GetAllBooksController extends AbstractController
+final class GetAllBooksController extends AbstractController
 {
     public function __construct(
         private ResponseFactoryInterface $response,
         private Fractalistic $fractal,
-        private LibraryService $service
+        private LibraryService $service,
     ) {
     }
 

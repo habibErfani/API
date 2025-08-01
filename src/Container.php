@@ -23,8 +23,9 @@ use Psr\Http\Message\ResponseFactoryInterface;
 use Spatie\Fractalistic\Fractal as Fractalistic;
 use Psr\Http\Message\UploadedFileFactoryInterface;
 use Psr\Http\Message\ServerRequestFactoryInterface;
+use App\Domain\Repository\LibraryRepositoryInterface;
 
-class Container extends ServiceManager
+final class Container extends ServiceManager
 {
     public static function initWithDefaults(array $options = []) : self
     {
@@ -35,18 +36,18 @@ class Container extends ServiceManager
             ],
             'invokables' => [
                 // PSR-17 HTTP Message Factories
-                RequestFactoryInterface::class       => GuzzleHttp\Psr7\HttpFactory::class,
+                RequestFactoryInterface::class => GuzzleHttp\Psr7\HttpFactory::class,
                 ServerRequestFactoryInterface::class => GuzzleHttp\Psr7\HttpFactory::class,
-                ResponseFactoryInterface::class      => GuzzleHttp\Psr7\HttpFactory::class,
-                StreamFactoryInterface::class        => GuzzleHttp\Psr7\HttpFactory::class,
-                UploadedFileFactoryInterface::class  => GuzzleHttp\Psr7\HttpFactory::class,
-                UriFactoryInterface::class           => GuzzleHttp\Psr7\HttpFactory::class,
+                ResponseFactoryInterface::class => GuzzleHttp\Psr7\HttpFactory::class,
+                StreamFactoryInterface::class => GuzzleHttp\Psr7\HttpFactory::class,
+                UploadedFileFactoryInterface::class => GuzzleHttp\Psr7\HttpFactory::class,
+                UriFactoryInterface::class => GuzzleHttp\Psr7\HttpFactory::class,
 
                 // PSR-18 HTTP Client implementations
                 ClientInterface::class => GuzzleHttp\Client::class,
             ],
             'factories' => [
-                Laminas\Di\ConfigInterface::class   => ConfigFactory::class,
+                Laminas\Di\ConfigInterface::class => ConfigFactory::class,
                 Laminas\Di\InjectorInterface::class => Laminas\Di\Container\InjectorFactory::class,
             ],
         ];
@@ -77,6 +78,7 @@ class Container extends ServiceManager
         $container->setFactory(
             LibraryRepository::class,
             function (ContainerInterface $container) {
+                /** @var EntityManager $entityManager */
                 $entityManager = $container->get(EntityManager::class);
 
                 return new LibraryRepository($entityManager);
@@ -86,6 +88,7 @@ class Container extends ServiceManager
         $container->setFactory(
             LibraryService::class,
             function (ContainerInterface $container) {
+                /** @var LibraryRepositoryInterface $repository */
                 $repository = $container->get(LibraryRepository::class);
 
                 return new LibraryService($repository);
@@ -111,6 +114,7 @@ class Container extends ServiceManager
         $container->setFactory(
             Fractal::class,
             function (ContainerInterface $container) {
+                /** @var Manager $manager */
                 $manager = $container->get(Manager::class);
 
                 return new Fractal($manager);

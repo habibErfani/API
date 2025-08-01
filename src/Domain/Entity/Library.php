@@ -4,7 +4,7 @@ namespace App\Domain\Entity;
 
 use Ramsey\Uuid\Uuid;
 
-class Library
+final class Library
 {
     private string $id;
     private string $name;
@@ -16,8 +16,8 @@ class Library
     public function __construct(
         string $name,
         string $description,
-        \DateTime $started = null,
-        \DateTime $ended = null
+        ?\DateTime $started = null,
+        ?\DateTime $ended = null,
     ) {
         $this->id          = Uuid::uuid4()->toString();
         $this->name        = $name;

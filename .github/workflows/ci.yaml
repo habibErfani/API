@@ -1,4 +1,4 @@
-name: ci php
+name: Iron push
 
 on:
   push:

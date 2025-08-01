@@ -1,0 +1,22 @@
+# Git
+**/.git
+
+# Dependencies
+**/vendor
+
+# IDE
+**/*.code-workspace
+**/.idea
+
+# System Files
+**/.DS_Store
+**/Thumbs.db
+
+# Misc
+**/*.cache
+
+# Environment variables
+**/.env
+
+# Dockerfile
+**/Dockerfile

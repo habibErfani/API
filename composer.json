@@ -17,7 +17,7 @@
         "php": "^8.1",
         "ramsey/uuid": "^4.7",
         "doctrine/dbal": "^3.6",
-        "doctrine/orm": "3.0.x-dev",
+        "doctrine/orm": "3.0.2",
         "symfony/cache": "^6.2",
         "doctrine/migrations": "^3.6",
         "league/fractal": "^0.20.1",
@@ -39,9 +39,12 @@
 
     },
     "scripts": {
-        "fix-cs": "php vendor/bin/php-cs-fixer fix --config=vendor/kdubuc/php-cs-fixer-rules/php-cs-fixer.php"
+        "fix-cs": "php vendor/bin/php-cs-fixer fix --config=vendor/kdubuc/php-cs-fixer-rules/php-cs-fixer.php",
+        "analyze": "php vendor/bin/psalm --config=psalm.xml",
+        "test": "php vendor/bin/phpunit --configuration phpunit.xml"
     },
     "require-dev": {
-        "phpunit/phpunit": "^10.1"
+        "phpunit/phpunit": "^10.1",
+        "vimeo/psalm": "dev-master as 6.13.1"
     }
 }
